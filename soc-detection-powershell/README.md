@@ -28,3 +28,44 @@ Simulated PowerShell logs containing:
 - Fileless execution patterns
 
 Example log entry:
+
+---
+
+## 🔍 Investigation Steps
+
+### **1. Identify Suspicious Indicators**
+Common red flags:
+- Base64 encoded commands (`-enc`)
+- No profile (`-nop`)
+- Hidden window (`-w hidden`)
+- Download cradle (`IEX (New-Object Net.WebClient).DownloadString(...)`)
+- Execution from unusual directories
+
+### **2. Decode the Base64 Command**
+Decoded output:
+(Example — your dataset may vary)
+
+### **3. Map to MITRE ATT&CK**
+- **T1059.001 — PowerShell**
+- **T1086 — Script Execution**
+- **T1027 — Obfuscated/Encoded Commands**
+
+### **4. Determine Severity**
+**High** — encoded PowerShell + hidden window + no profile = strong malicious pattern.
+
+---
+
+## 🛡️ Detection Logic (Sigma Rule)
+
+---
+
+## 📝 Final Summary
+This investigation identified suspicious PowerShell activity involving encoded commands and hidden execution. These behaviors are commonly associated with malware, fileless attacks, and initial access payloads. A Sigma detection rule was created to help identify similar activity in a SIEM environment.
+
+---
+
+## 🚀 Next Steps
+- Build a second detection for **failed RDP brute-force attempts**
+- Add a log parser script (Python)
+- Expand to a full “SOC Analyst Playbook” project
+
