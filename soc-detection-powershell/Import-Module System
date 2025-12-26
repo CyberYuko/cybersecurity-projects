@@ -1,0 +1,14 @@
+(Example — your dataset may vary)
+
+### **3. Map to MITRE ATT&CK**
+- **T1059.001 — PowerShell**
+- **T1086 — Script Execution**
+- **T1027 — Obfuscated/Encoded Commands**
+
+### **4. Determine Severity**
+**High** — encoded PowerShell + hidden window + no profile = strong malicious pattern.
+
+---
+
+## 🛡️ Detection Logic (Sigma Rule)
+
