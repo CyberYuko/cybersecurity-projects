@@ -1,0 +1,15 @@
+
+---
+
+## 🔍 Investigation Steps
+
+### **1. Identify Suspicious Indicators**
+Common red flags:
+- Base64 encoded commands (`-enc`)
+- No profile (`-nop`)
+- Hidden window (`-w hidden`)
+- Download cradle (`IEX (New-Object Net.WebClient).DownloadString(...)`)
+- Execution from unusual directories
+
+### **2. Decode the Base64 Command**
+Decoded output:
